@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-animations-samples",
+  "version": "1.0.0",
+  "description": "Used for talks and experiments with animations inside VueJS and NuxtJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuells/nuxt-animations-samples.git"
+  },
+  "keywords": [
+    "nuxtjs",
+    "vuejs",
+    "animation",
+    "experiment",
+    "sample"
+  ],
+  "author": "samuel@snopko.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuells/nuxt-animations-samples/issues"
+  },
+  "homepage": "https://github.com/samuells/nuxt-animations-samples#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "nuxt": "^2.8.1",
+    "postcss-normalize": "^8.0.1",
+    "sass-loader": "^7.1.0"
+  }
+}
