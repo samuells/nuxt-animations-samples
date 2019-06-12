@@ -1,6 +1,11 @@
 <template>
   <article class="rt-content">
     <div class="row--text">
+      <nuxt-link
+        to="/intro"
+        class="button">
+        Back to home
+      </nuxt-link>
       <h1 class="lvl1">{{ title }}</h1>
       <p class="_intro">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi impedit doloribus accusamus, velit animi sed. Impedit sequi velit deserunt rem culpa iste vero dolore! Harum aut voluptates, sequi expedita debitis.

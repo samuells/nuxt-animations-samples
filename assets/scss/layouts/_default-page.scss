@@ -2,12 +2,6 @@
 // Layout of the default page template
 // =======================
 
-$generate-classes: false !default;
-
-// ---------
-// Implementation
-@if $generate-classes {
-  .app-wrapper {
-    // placeholder
-  }
+.page--default {
+  width: 100%;
 }

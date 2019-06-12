@@ -33,7 +33,8 @@ export default {
     link: [
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Lora:400,700"
+        href:
+          "https://fonts.googleapis.com/css?family=Encode+Sans+Expanded:400,700&display=swap"
       }
     ]
   },
@@ -43,11 +44,20 @@ export default {
     */
   loading: { color: "#FFFFFF" },
   /*
+  ** Layout Transitions
+  */
+  layoutTransition: {
+    name: "layout",
+    mode: "out-in"
+  },
+
+  /*
   ** Page Transitions
   */
-  // transition: {
-  //   mode: "out-in"
-  // },
+  transition: {
+    name: "default",
+    mode: ""
+  },
 
   /*
     ** Global CSS

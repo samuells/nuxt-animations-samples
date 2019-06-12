@@ -1,5 +1,10 @@
 <template>
   <main>
+    <nuxt-link
+      to="/"
+      class="button">
+      Preloader
+    </nuxt-link>
     <SampleTypography title="Third Page"/>
   </main>
 </template>

@@ -5,12 +5,12 @@
 // -----------
 // Fonts Variables
 //
-$font-family--sans-serif: Arial, Roboto, sans-serif;
+$font-family--sans-serif: "Encode Sans Expanded", Arial, Roboto, sans-serif;
 $font-family--serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family--monospace: Consolas, "Liberation Mono", Courier, monospace;
 
-$font-family--body: $font-family--serif;
-$font-family--header: $font-family--serif;
+$font-family--body: $font-family--sans-serif;
+$font-family--header: $font-family--sans-serif;
 $font-family--header-alt: $font-family--sans-serif;
 // $font-family--button: $font-family--body;
 

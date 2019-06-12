@@ -1,74 +1,117 @@
-$duration: 300ms;
+$t-duration: 800ms;
+$t-delay: 150ms;
 
-.page-leave-active,
-.page-enter-active {
-  transition-duration: $duration;
+.default-enter-active,
+.default-leave-active {
+  transition-property: opacity, transform;
+  transition-duration: $t-duration;
+  transition-timing-function: ease-in-out;
+}
 
-  &.cases {
-    $duration: 500ms;
+.default-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: $white;
+  transform: translate3d(0, 100vh, 0);
+}
 
-    transition-duration: $duration;
+.default-leave-active {
+  // transition-duration: $t-duration - $t-delay;
+  // transition-delay: $t-delay;
+}
 
-    &::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      display: block;
-      width: 100vw;
-      height: 100vh;
-      background: linear-gradient(
-        135deg,
-        rgba($blue-turquoise, 1) 25%,
-        rgba($blue-turquoise, 0) 75%);
-      transform-origin: 0% 0%;
-      transition-duration: $duration;
-      transition-timing-function: cubic-bezier(0.93, 0.33, 0.65, 0.66);
-    }
+.default-leave-to {
+  opacity: 0.2;
+  transform: translate3d(0, -80vh, 0);
+}
+
+.default-enter-to {
+  transform: translate3d(0, 0, 0);
+}
+
+// Back to intro animation
+
+$t-duration: 800ms;
+$t-delay: 300ms;
+
+.intro-enter-active,
+.intro-leave-active {
+  transition-duration: $t-duration * 2;
+
+  &::before,
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 50%;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+  }
+
+  &::before {
+    background-color: $black-mine;
+  }
+
+  &::after {
+    top: 50%;
+    background-color: $black-mine;
   }
 }
 
-.page-enter-active {
-  &.cases {
-    &::before {
-      background: linear-gradient(
-        135deg,
-        rgba($blue-turquoise, 0) 25%,
-        rgba($blue-turquoise, 1) 75%);
-      transform-origin: 100% 100%;
-    }
+.intro-leave {
+  &::before,
+  &::after {
+    transform: scaleX(0);
   }
 }
 
-.page-leave {
-  &.cases {
-    &::before {
-      transform: scale(0);
-    }
+.intro-leave-active {
+  &::before {
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
   }
 }
 
-.page-leave-to {
-  &.cases {
-    &::before {
-      transform: scale(3.5);
-    }
+.intro-leave-to {
+  &::before,
+  &::after {
+    transform: scale(1);
+    transform-origin: left;
   }
 }
 
-.page-enter {
-  &.cases {
-    &::before {
-      transform: scale(3.5);
-    }
+.intro-enter {
+  &::before,
+  &::after {
+    transform: scaleX(1);
   }
 }
 
-.page-enter-to {
-  &.cases {
-    &::before {
-      transform: scale(0);
-    }
+.intro-enter-active {
+  &::before {
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
+  }
+}
+
+.intro-enter-to {
+  &::before,
+  &::after {
+    transform: scaleX(0);
+    transform-origin: right;
   }
 }

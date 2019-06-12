@@ -1,0 +1,84 @@
+$t-duration: 700ms;
+$t-delay: 100ms;
+
+.layout-enter-active,
+.layout-leave-active {
+  transition-duration: $t-duration;
+
+  &::before,
+  &::after {
+    content: "";
+    position: fixed;
+    z-index: 2;
+    display: block;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 50%;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-in-out;
+  }
+
+  &::before {
+    top: 25%;
+    left: 25%;
+    background-color: $black-mine;
+  }
+
+  &::after {
+    top: 75%;
+    left: 75%;
+    background-color: $black-mine;
+  }
+}
+
+.layout-leave {
+  &::before,
+  &::after {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
+}
+
+.layout-leave-active {
+  &::before {
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
+  }
+}
+
+.layout-leave-to {
+  &::before,
+  &::after {
+    transform: translate3d(-50%, -50%, 0) scale(3);
+  }
+}
+
+.layout-enter {
+  &::before,
+  &::after {
+    transform: translate3d(-50%, -50%, 0) scale(3);
+  }
+}
+
+.layout-enter-active {
+  &::before {
+    left: 75%;
+    transition-duration: $t-duration;
+  }
+
+  &::after {
+    left: 25%;
+    transition-duration: $t-duration - $t-delay;
+    transition-delay: $t-delay;
+  }
+}
+
+.layout-enter-to {
+  &::before,
+  &::after {
+    transform: translate3d(-50%, -50%, 0) scale(0);
+  }
+}
