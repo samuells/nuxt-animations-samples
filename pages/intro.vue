@@ -18,11 +18,24 @@
         to="/different"
         class="button">Different Layout</nuxt-link>
     </div>
+    <div>
+      <button
+        class="button"
+        @click.prevent="toggleDialog">
+        Open Dialog
+      </button>
+    </div>
+    <transition name="dialog">
+      <DialogBox
+        v-if="showDialog"
+        @clicked="toggleDialog"/>
+    </transition>
   </main>
 </template>
 
 <script>
 import NuxtLogo from "~/components/NuxtLogo"
+import DialogBox from "~/components/DialogBox"
 
 export default {
   transition: {
@@ -30,7 +43,18 @@ export default {
     mode: "out-in"
   },
   components: {
-    NuxtLogo
+    NuxtLogo,
+    DialogBox
+  },
+  data() {
+    return {
+      showDialog: false
+    }
+  },
+  methods: {
+    toggleDialog() {
+      this.showDialog = !this.showDialog
+    }
   }
 }
 </script>
