@@ -1,0 +1,40 @@
+.page-landing {
+  background: linear-gradient(
+    160deg,
+    rgba($blue-turquoise, 1) #{rem(50)},
+    rgba($blue-turquoise, 0) #{rem(300)});
+  background-position: 50% rem(-132);
+  background-repeat: no-repeat;
+
+  &._contact-gradient {
+    background: linear-gradient(
+      -160deg,
+      rgba($blue-turquoise, 0.1) #{rem(50)},
+      rgba($blue-turquoise, 1) #{rem(300)});
+    background-position: 50% 50%;
+  }
+
+  ._page-title {
+    padding-top: rh(2);
+    margin-bottom: rh(2);
+    font-family: $font-family--header;
+    color: $primary-font-color;
+    font-size: rem(30);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  @include breakpoint(w740) {
+    ._page-title {
+      font-size: rem(36);
+    }
+  }
+
+  @include breakpoint(w1024) {
+    ._page-title {
+      padding-top: rh(1.5);
+      margin-bottom: rh(2.5);
+      font-size: rem(42);
+    }
+  }
+}

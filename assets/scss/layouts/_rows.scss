@@ -1,0 +1,68 @@
+// =======================
+// Rows settings
+// =======================
+
+$generate-classes: false !default;
+
+$fluid-breakpoint: "w1280" !default;
+$maxed-breakpoint-width: map-get($breakpoints, "w1680") !default;
+$maxed-text-row-width: 760 !default;
+$maxed-content-row-width: 1040 !default;
+$maxed-row-width: 1440 !default;
+$maxed-full-row-width: 1920 !default;
+
+@mixin row--text {
+  max-width: rem($maxed-text-row-width);
+  padding: 0 rem($padding--side);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin row--content {
+  max-width: rem($maxed-content-row-width);
+  padding: 0 rem($padding--side);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin row--full {
+  max-width: rem($maxed-full-row-width);
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin row--outer {
+  max-width: rem($maxed-row-width);
+  padding: 0 rem($padding--side);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($fluid-breakpoint) {
+    max-width: percentage($maxed-row-width / strip-unit($maxed-breakpoint-width));
+  }
+
+  @include breakpoint($maxed-breakpoint-width) {
+    max-width: calc-rem($maxed-row-width);
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .row--outer {
+    @include row--outer;
+  }
+
+  .row--content {
+    @include row--content;
+  }
+
+  .row--text {
+    @include row--text;
+  }
+
+  .row--full {
+    @include row--full;
+  }
+}

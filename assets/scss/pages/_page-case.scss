@@ -1,0 +1,25 @@
+.page-case {
+  ._page-title {
+    padding-top: rh(1);
+    margin-bottom: rh(2);
+    font-family: $font-family--header;
+    color: $primary-font-color;
+    font-size: rem(30);
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  @include breakpoint(w740) {
+    ._page-title {
+      font-size: rem(36);
+    }
+  }
+
+  @include breakpoint(w1024) {
+    ._page-title {
+      padding-top: rh(1.5);
+      margin-bottom: rh(2.5);
+      font-size: rem(42);
+    }
+  }
+}

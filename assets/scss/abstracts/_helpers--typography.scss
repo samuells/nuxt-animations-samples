@@ -1,0 +1,73 @@
+// =======================
+// Fluid Typography Helpers
+//
+// Create a property with fluid scalable values between two breakpoints
+// =======================
+/* stylelint-disable */
+
+
+// -----------
+// Create a property with fluid scalable values between two breakpoints
+//
+// Contributors: Manuel Haller Polo <manuel@wondrous.ch>
+@mixin fluid-property($properties: "font-size", $sizes: (24px, 32px), $min-breakpoint: medium, $max-breakpoint: xlarge) {
+  //Fallback
+  $min-breakpoint: map-get($breakpoints, $min-breakpoint);
+  $max-breakpoint: map-get($breakpoints, $max-breakpoint);
+
+  #{$properties}: #{rem-calc(min($sizes...))};
+  #{$properties}: calc(#{rem-calc(nth($sizes, 1))} + #{strip-unit(nth($sizes, 2) - nth($sizes, 1))} * (100vw - #{rem-calc($min-breakpoint)}) / #{strip-unit($max-breakpoint - $min-breakpoint)});
+}
+
+// -----------
+// Create a class with mutliple fluid properties
+//
+// Contributors: Manuel Haller Polo <manuel@wondrous.ch>
+@mixin fluid($args, $breakpoints-map: (medium, xxlarge)) {
+  @if is-map($args) {
+    $index: 1;
+    $index-b: 1;
+    $min-breakpoint: map-get($breakpoints, nth($breakpoints-map, 1));
+    $max-breakpoint: map-get($breakpoints, nth($breakpoints-map, length($breakpoints-map)));
+
+    @each $breakpoint-key, $breakpoint-value in $breakpoints {
+      @include breakpoint($breakpoint-key) {
+        @each $property, $values in $args {
+          $min-value: min($values...);
+          $max-value: max($values...);
+
+          @if $breakpoint-value == 0 {
+            #{$property}: calc-rem($min-value);
+          }
+
+          @else if $breakpoint-value == $max-breakpoint {
+            #{$property}: calc-rem($max-value);
+          }
+
+          @else if $breakpoint-value < $max-breakpoint and $breakpoint-value > $min-breakpoint {
+            @if index($breakpoints-map, $breakpoint-key) {
+              @if type-of($values) == list and length($values) > $index {
+                $min-value: nth($values, $index);
+                $max-value: nth($values, $index + 1);
+
+                @include fluid-property($property, ($min-value, $max-value), nth($breakpoints-map, $index), nth($breakpoints-map, $index+1));
+                $index: $index + 1;
+              }
+            }
+
+            @else {
+              $calc-value: round(scale-to-range($breakpoint-value, $min-breakpoint, $max-breakpoint, $min-value, $max-value));
+
+              @include fluid-property($property, ($calc-value, $max-value), $breakpoint-key, nth($breakpoints-map, length($breakpoints-map)));
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// -----------
+@function scale-to-range($input, $inMin, $inMax, $outMin:0, $outMax:1) {
+  @return ($input - $inMin) / ($inMax - $inMin) * ($outMax - $outMin) + $outMin;
+}

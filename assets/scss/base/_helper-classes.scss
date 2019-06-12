@@ -1,0 +1,12 @@
+// =======================
+// Global Helper Classes
+// =======================
+
+$generate-classes: false !default;
+
+// Write helper classes inside
+@if $generate-classes {
+  .visually-hidden {
+    @include element-invisible;
+  }
+}

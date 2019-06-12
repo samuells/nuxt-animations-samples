@@ -1,0 +1,170 @@
+// =======================
+// Reset Browsers and Styles
+//
+// Inspired by Foundation for Sites by ZURB (foundation.zurb.com)
+// Licensed under MIT Open Source
+// =======================
+
+$generate-classes: false !default;
+
+// Fonts Family
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto,
+  Arial, sans-serif !default;
+$font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace !default;
+$body-font-family: $font-family-sans-serif !default;
+$header-font-family: $body-font-family !default;
+$button-font-family: $body-font-family !default;
+
+// Font Styles
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+// Anchor Links
+$anchor-text-decoration: none !default;
+$anchor-text-decoration-hover: none !default;
+$anchor-font-color: #00f !default;
+$anchor-font-color-hover: scale-color(
+  $anchor-font-color,
+  $lightness: -14%
+) !default;
+
+// Lists (ul/ol)
+$list-font-family: $body-font-family !default;
+$list-font-size: 1rem !default;
+$list-font-weight: $font-weight-normal !default;
+$list-font-color: #000 !default;
+$list-line-height: 1.2 !default;
+$list-margin-bottom: 0.5rem !default;
+$list-style-position: outside !default;
+$list-side-margin: 1.1rem !default;
+$list-ordered-side-margin: 1.4rem !default;
+$list-side-margin-no-bullet: 0 !default;
+$list-nested-margin: rem-calc(20) !default;
+$list-default-float: left !default;
+
+// Definition Lists
+$definition-list-header-weight: $font-weight-bold !default;
+$definition-list-header-margin-bottom: 0.3rem !default;
+$definition-list-margin-bottom: rem-calc(12) !default;
+
+// Typography resets
+@mixin reset-typography {
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  blockquote,
+  body,
+  dd,
+  div,
+  dl,
+  dt,
+  form,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  ol,
+  p,
+  pre,
+  td,
+  th,
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  // Default Link Styles
+  a {
+    line-height: inherit;
+    color: $anchor-font-color;
+    text-decoration: $anchor-text-decoration;
+
+    &:focus,
+    &:hover {
+      color: $anchor-font-color-hover;
+
+      @if $anchor-text-decoration-hover != $anchor-text-decoration {
+        text-decoration: $anchor-text-decoration-hover;
+      }
+    }
+
+    img {
+      border: 0;
+    }
+  }
+
+  // Helpful Typography Defaults
+  em,
+  i {
+    font-style: italic;
+    line-height: inherit;
+  }
+
+  b,
+  strong {
+    font-weight: 700;
+    line-height: inherit;
+  }
+
+  small {
+    font-size: 60%;
+    line-height: inherit;
+  }
+
+  // Lists
+  dl,
+  ol,
+  ul {
+    margin-bottom: $list-margin-bottom;
+    font-family: $list-font-family;
+    font-size: $list-font-size;
+    font-weight: $list-font-weight;
+    line-height: $list-line-height;
+    color: $list-font-color;
+    list-style-position: $list-style-position;
+  }
+
+  // Un/Ordered Lists
+  ol,
+  ul {
+    margin-#{$list-default-float}: $list-side-margin;
+
+    li {
+      ol,
+      ul {
+        margin-#{$list-default-float}: $list-nested-margin;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Definition Lists
+  dl {
+    dt {
+      margin-bottom: $definition-list-header-margin-bottom;
+      font-weight: $definition-list-header-weight;
+    }
+
+    dd {
+      margin-bottom: $definition-list-margin-bottom;
+    }
+  }
+}
+// ---------
+// Implementation
+@if $generate-classes {
+  @include reset-typography;
+}

@@ -1,0 +1,43 @@
+// =======================
+// Toolbelt
+//
+// !!!! README FIRST !!!!
+// ! This file does not generate any clases !
+// This sass file contains all tools needed to style the project.
+// - functions
+// - mixins
+// - settings
+//
+// --IMPORTANT--
+// ! do not change order of imports !
+// =======================
+
+
+// -------------------------------------
+// 1. Global Styles Settings & Functions & Mixins
+//
+// - Project settings - these settings overrides default settings of Foundation and Ingrid
+// - Ingrid styling system build on Foundation from Zurb
+// - Vertical-Rhythm, Reponsive Typography
+// - Iconfont mixins
+
+@import "abstracts/colors";
+@import "abstracts/variables";
+@import "abstracts/fonts";
+@import "abstracts/z-indexes";
+@import "abstracts/units";
+@import "abstracts/breakpoints";
+@import "abstracts/vertical-rhythm";
+@import "abstracts/helpers";
+@import "abstracts/helpers--typography";
+
+// -------------------------------------
+// 2. Custom project mixins and styles
+//
+// - usually style mixins used only in this project
+// - icons classes and variables
+
+@import "abstracts/visibility";
+@import "abstracts/clearfix";
+@import "abstracts/transitions";
+@import "abstracts/animations";

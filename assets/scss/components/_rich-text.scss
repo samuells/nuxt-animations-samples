@@ -1,0 +1,21 @@
+@import "../base/headlines";
+
+.rich-text {
+  margin-right: auto;
+
+  h1 {
+    @include headline--lvl1(true);
+  }
+
+  h2 {
+    @include headline--lvl2(true);
+  }
+
+  h3 {
+    @include headline--lvl3(true);
+  }
+
+  h4 {
+    @include headline--lvl4(true);
+  }
+}

@@ -1,0 +1,39 @@
+// =======================
+// Fonts Imports & Settings
+// =======================
+
+// -----------
+// Fonts Variables
+//
+$font-family--sans-serif: Arial, Roboto, sans-serif;
+$font-family--serif: "Lora", Georgia, Cambria, "Times New Roman", Times, serif;
+// $font-family--monospace: Consolas, "Liberation Mono", Courier, monospace;
+
+$font-family--body: $font-family--serif;
+$font-family--header: $font-family--serif;
+$font-family--header-alt: $font-family--sans-serif;
+// $font-family--button: $font-family--body;
+
+// @font-face {
+//   font-weight: 300;
+//   font-family: "FontName";
+//   font-style: normal;
+//   src: url("~assets/fonts/FontName-Light.woff") format("woff");
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-weight: 400;
+//   font-family: "FontName";
+//   font-style: normal;
+//   src: url("~assets/fonts/FontName-Regular.woff") format("woff");
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-weight: 700;
+//   font-family: "FontName";
+//   font-style: normal;
+//   src: url("~assets/fonts/FontName-Bold.woff") format("woff");
+//   font-display: swap;
+// }

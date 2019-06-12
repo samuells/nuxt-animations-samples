@@ -1,0 +1,107 @@
+// =======================
+// Global Buttons Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin button--base {
+  @include paragraph(false);
+  @include transition(background-color, color, border-color);
+
+  display: inline-block;
+  padding: calc-rem(8 26);
+  border: 0 solid $button-bc;
+  border-radius: rem(3);
+  margin-bottom: calc-rem(16);
+  color: $button-fc;
+  font-weight: 700;
+  font-family: $font-family--header;
+  line-height: (24 / 16) !important;
+  background-color: $button-bgc;
+  background-clip: padding-box;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  text-rendering: optimizeLegibility;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: $button-bc--hover;
+    color: $button-fc--hover;
+    background-color: $button-bgc--hover;
+  }
+
+  &:active {
+    border-color: $button-bc--active;
+  }
+
+  &:disabled {
+    border-color: rgba($black, 0.1) !important;
+    color: $white !important;
+    background-color: rgba($black, 0.1) !important;
+    box-shadow: none !important;
+    cursor: not-allowed !important;
+  }
+
+  @include breakpoint(large) {
+    margin-bottom: rh(1);
+  }
+}
+
+// -----------
+// gray Button Mixin
+@mixin button--gray {
+  border-color: $button-gray-bc;
+  color: $button-gray-fc;
+  background-color: $button-gray-bgc;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: $button-gray-bc--hover;
+    color: $button-gray-fc--hover;
+    background-color: $button-gray-bgc--hover;
+  }
+
+  &:active {
+    border-color: $button-gray-bc--active;
+  }
+}
+
+// -----------
+// dark blue Button Mixin
+@mixin button--dark-blue {
+  border-color: $button-dark-blue-bc;
+  color: $button-dark-blue-fc;
+  background-color: $button-dark-blue-bgc;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: $button-dark-blue-bc--hover;
+    color: $button-dark-blue-fc--hover;
+    background-color: $button-dark-blue-bgc--hover;
+  }
+
+  &:active {
+    border-color: $button-dark-blue-bc--active;
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .button,
+  button {
+    @include button--base;
+  }
+
+  ._button--gray {
+    @include button--gray;
+  }
+
+  ._button--dark-blue {
+    @include button--dark-blue;
+  }
+}

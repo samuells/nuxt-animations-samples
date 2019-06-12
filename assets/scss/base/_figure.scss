@@ -1,0 +1,27 @@
+// =======================
+// Global Figure Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin figure {
+  padding-bottom: rh(0.75);
+  margin-bottom: rh(0.75);
+
+  img {
+    max-width: none;
+    width: 100%;
+    margin-bottom: rh(0.5);
+  }
+
+  figcaption {
+    @include paragraph--caption();
+  }
+}
+// ---------
+// Implementation
+@if $generate-classes {
+  figure {
+    @include figure();
+  }
+}

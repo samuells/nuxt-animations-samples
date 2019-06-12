@@ -1,0 +1,77 @@
+// =======================
+// Global Unorder List Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin list--unordered {
+  @include paragraph(false);
+
+  padding-left: rem(2);
+  margin: rh(0.5) 0;
+  font-size: rem(18);
+  list-style: square;
+
+  li {
+    position: relative;
+    padding-left: calc-rem(20);
+    margin: 0 0 rh(0.25);
+    list-style-type: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: rem(8);
+      width: 0;
+      height: 0;
+      border: solid transparent;
+      border-color: rgba(74, 74, 74, 0);
+      border-left-color: $gray-abbey;
+      border-width: rem(5);
+      pointer-events: none;
+    }
+
+    > ul {
+      padding-bottom: 0;
+      padding-left: calc-rem(10);
+      margin: rh(0.25) 0 0;
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin: rh(1) 0;
+
+    li {
+      margin-bottom: rh(0.5);
+
+      > ul {
+        padding-left: calc-rem(10);
+      }
+    }
+  }
+
+  @include breakpoint(w1024) {
+    margin: rh(1.5) 0;
+    font-size: rem(20);
+
+    li::before {
+      top: rem(12);
+    }
+  }
+}
+// ---------
+// Implementation
+// ---------
+// Implementation
+@if $generate-classes {
+  .rt-content {
+    ul {
+      @include list--unordered;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+// =======================
+// Global Table Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin table {
+  display: table;
+  width: 100%;
+  max-width: 100%;
+  border-width: none;
+  border-radius: 6px 6px 0 0;
+  border-collapse: collapse;
+  margin-bottom: rh();
+  text-align: left;
+
+  td,
+  th {
+    @include paragraph(false);
+
+    padding: rh(0.5) rh(1);
+    border-bottom: calc-rem(1) solid $table-bc;
+    vertical-align: top;
+  }
+
+  th {
+    &:first-child {
+      border-radius: 6px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 6px 0 0;
+    }
+  }
+
+  td {
+    color: $table-fc;
+  }
+
+  thead {
+    color: $table-header-fc;
+    background-color: $table-header-bgc;
+  }
+
+  tfoot {
+    color: $table-header-fc;
+    background-color: rgba($table-header-bgc, 0.15);
+    background-color: $table-foot-bgc;
+
+    th {
+      border-top: calc-rem(2) solid $table-bc;
+      border-bottom: 0;
+      color: $table-fc;
+
+      &::after,
+      &::before {
+        content: none !important;
+      }
+
+      &:first-child {
+        border-radius: 0;
+      }
+
+      &:last-child {
+        border-radius: 0;
+      }
+    }
+  }
+
+  thead td,
+  thead th {
+    border-top: 0;
+    color: inherit;
+    vertical-align: bottom;
+  }
+
+  tbody + tbody {
+    border-top: calc-rem(2) solid $table-bc;
+  }
+
+  tr:active,
+  tr:focus,
+  tr:hover {
+    background-color: rgba($table-header-bgc, 0.1);
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  table {
+    @include table;
+  }
+}

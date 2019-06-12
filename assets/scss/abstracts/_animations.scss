@@ -1,0 +1,15 @@
+// =======================
+// Animation Mixins/Functions
+// =======================
+
+// -----------
+// Default project animation
+//
+@mixin animate($name, $dur: 500ms, $delay: 0ms, $tf: ease-in-out, $fm: forwards) {
+  animation-duration: $dur;
+  animation-delay: $delay;
+  animation-iteration-count: infinite;
+  animation-fill-mode: $fm;
+  animation-name: $name;
+  animation-timing-function: $tf;
+}

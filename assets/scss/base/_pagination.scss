@@ -1,0 +1,76 @@
+// =======================
+// Global Pagination Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin pagination {
+  @include reset-ul(true);
+
+  text-align: center;
+
+  a {
+    @include transition(background-color, border-color, color);
+
+    display: block;
+    width: rem(32);
+    height: rem(32);
+    padding-bottom: rem(2);
+    border: 1px solid $pagination-bc;
+    border-radius: rem(6);
+    color: $pagination-fc;
+    line-height: rem(30);
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $pagination-bgc--active;
+      color: $pagination-fc--active;
+      background-color: $pagination-bgc--active;
+    }
+  }
+
+  > .page-item {
+    margin: 0 rem(2);
+
+    &:nth-child(2) {
+      margin-right: rem(10);
+    }
+
+    &:nth-last-child(2) {
+      margin-left: rem(10);
+    }
+
+    &.active {
+      a {
+        border-color: $pagination-bgc--active;
+        color: $pagination-fc--active;
+        background-color: $pagination-bgc--active;
+      }
+    }
+
+    > span {
+      display: block;
+      width: rem(32);
+      height: rem(32);
+      padding-bottom: rem(2);
+      border: 1px solid rgba($pagination-bc, 0.5);
+      border-radius: rem(6);
+      line-height: rem(30);
+      color: rgba($pagination-bc, 0.5);
+    }
+
+    &[role="separator"] > span {
+      border-width: none;
+      color: $pagination-fc;
+    }
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .pagination {
+    @include pagination;
+  }
+}

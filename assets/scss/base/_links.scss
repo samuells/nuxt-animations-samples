@@ -1,0 +1,71 @@
+// =======================
+// Global Links Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin link--stand-alone {
+  @include paragraph(false);
+  @include transition(color);
+
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: $font-family--sans-serif;
+  color: $link-fc;
+
+  &:focus,
+  &:hover,
+  &.nuxt-link-exact-active {
+    color: $link-fc--hover;
+  }
+
+  &:active {
+    color: $link-fc--active;
+  }
+}
+
+@mixin link--in-paragraph {
+  @include transition(background);
+
+  display: inline;
+  font-family: inherit;
+  text-decoration: none;
+  color: $link-paragraph-fc;
+  font-weight: 700;
+  background: linear-gradient(
+    0deg,
+    $blue-turquoise rem(2),
+    $transparent rem(2)
+  );
+
+  &:focus,
+  &:hover {
+    color: $link-paragraph-fc--hover;
+    background: linear-gradient(
+      0deg,
+      $blue-turquoise 50%,
+      $transparent 50%
+    );
+  }
+
+  &:active {
+    background: linear-gradient(
+      0deg,
+      $link-paragraph-fc--active 50%,
+      $transparent 50%
+    );
+  }
+}
+// ---------
+// Implementation
+@if $generate-classes {
+  a.stand-alone {
+    @include link--stand-alone;
+  }
+
+  p a,
+  figcaption a {
+    @include link--in-paragraph;
+  }
+}

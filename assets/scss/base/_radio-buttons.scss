@@ -1,0 +1,17 @@
+// =======================
+// Global Toggle Buttons Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin toggle-button {
+  // Placeholder
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .toggle-button {
+    @include toggle-button;
+  }
+}

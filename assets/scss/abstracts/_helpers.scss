@@ -1,0 +1,71 @@
+// =======================
+// Helper Mixins and Functions
+// =======================
+/* stylelint-disable */
+
+// -----------
+// Get a unitless value
+//
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// -----------
+// Correct word-wrapping helper
+//
+@mixin word-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: normal;
+  word-break: break-word;
+  -ms-hyphens: manual;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+// -------------
+// Just "shortcut" for rem-calc
+@function calc-rem($value) {
+  @return rem-calc($value);
+}
+
+@function rem($value) {
+  @return rem-calc($value);
+}
+
+// -------------
+// Creates font size in rem and to add corespondent line height according to the settings in vertical rhythm
+//
+@mixin calc-font($font-size) {
+  font-size: calc-rem($font-size);
+  line-height: calc-rhythm($font-size);
+}
+
+// -------------
+// Shortcut for the setting of states of anchor links
+//
+@mixin link-states {
+  &:active,
+  &:focus,
+  &:hover {
+    @content;
+  }
+}
+
+// -------------
+// This is the mixin to reset default behaviout of ul/ol.
+//
+// $inline - true/false
+//
+@mixin reset-ul($inline: false) {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @if $inline {
+    > li {
+      display: inline-block;
+    }
+  }
+}

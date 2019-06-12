@@ -1,0 +1,84 @@
+// =======================
+// Global Text Paragraphs Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin paragraph($box-model: true) {
+  font-family: $font-family--body;
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: (24 / 18);
+  color: $primary-font-color;
+
+  @if $box-model {
+    padding-bottom: rh(0.75);
+    margin-bottom: rh(0.75);
+
+    @include breakpoint(w740) {
+      padding-bottom: rh(0.5);
+      margin-bottom: rh(0.5);
+    }
+
+    @include breakpoint(w1024) {
+      margin-bottom: rh(0.75);
+    }
+  }
+
+  @include breakpoint(w1024) {
+    font-size: rem(20);
+    line-height: (26 / 20);
+  }
+}
+
+@mixin paragraph--caption($box-model: true) {
+  font-family: $font-family--body;
+  font-weight: 400;
+  font-size: rem(15);
+  letter-spacing: 0.7px;
+  line-height: (22 / 15);
+  color: $primary-font-color;
+
+  @include breakpoint(w1024) {
+    font-size: rem(15);
+    line-height: (22 / 15);
+  }
+}
+
+@mixin paragraph--intro($box-model: false) {
+  font-weight: 700;
+  font-size: rem(22);
+  line-height: (30 / 22);
+
+  @include breakpoint(w1280) {
+    font-size: rem(26);
+    line-height: (35 / 26);
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  p {
+    @include paragraph;
+
+    &._caption {
+      @include paragraph--caption;
+    }
+
+    &._intro {
+      @include paragraph--intro;
+    }
+
+    ._highlight {
+      padding: 0 rem(6);
+      background: linear-gradient(
+        0deg,
+        $transparent 20%,
+        $blue-turquoise 20%,
+        $blue-turquoise 80%,
+        $transparent 80%,
+      );
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// =======================
+// Default setup for Images
+// =======================
+
+$generate-classes: false !default;
+
+@mixin image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+@mixin image--in-text-flow {
+  width: 100%;
+  padding-bottom: rh(0.5);
+  margin-bottom: rh(0.5);
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  img {
+    @include image;
+  }
+
+  img.row--image {
+    @include image--in-text-flow;
+  }
+}

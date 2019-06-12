@@ -1,0 +1,72 @@
+// =======================
+// Global Blockquote Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin blockquote {
+  margin-bottom: rh(1.5);
+
+  ._quote {
+    position: relative;
+    padding-top: rh(2.5);
+    margin-bottom: rh(0.5);
+    font-style: italic;
+    color: $blockquote-fc;
+    font-size: rem(25);
+
+    &::before {
+      content: "“";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      font-size: rem(90);
+    }
+
+    &::after {
+      content: "„";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: block;
+      font-size: rem(90);
+    }
+  }
+
+  ._quote-author {
+    font-size: rem(12);
+    font-weight: 700;
+    color: $blockquote-fc--author;
+  }
+
+  @include breakpoint(w1024) {
+    max-width: rem(500);
+    margin-left: auto;
+    margin-right: auto;
+
+    ._quote {
+      padding-top: rh(2);
+      font-size: rem(30);
+
+      &::before {
+        left: rem(-45);
+      }
+
+      &::after {
+        bottom: rh(-1);
+      }
+    }
+
+    ._quote-author {
+      font-size: rem(15);
+    }
+  }
+}
+// ---------
+// Implementation
+@if $generate-classes {
+  blockquote {
+    @include blockquote();
+  }
+}

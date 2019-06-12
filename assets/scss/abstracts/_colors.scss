@@ -1,0 +1,155 @@
+// =======================
+// Colors Variables
+//
+// Naming convention - base color + the name of the color base
+// on the project http://chir.ag/projects/name-that-color/
+// =======================
+
+// Project Palette
+$transparent: rgba(255, 255, 255, 0);
+$white: #fff;
+$white-porcelain: #f2f5f6;
+$black-daintree: #011f26;
+$black-swamp: #001f26;
+$black: #000;
+
+$blue-charlotte: #9af9e9;
+$blue-turquoise: #26ffd5;
+
+// shouldn't be used
+$blue-biscay: #1a4063;
+$blue-curious: #3898d4;
+$blue-burst: #223551;
+$gray-haze: #f1f2f2;
+$gray-silver: #ccc;
+$gray-bombay: #b2b2b7;
+$gray-mid: #626366;
+$gray-abbey: #4d4e58;
+$gray-steel: #202030;
+$gray-water: #f5f8fc;
+$gray-mercury: #e6e6e6;
+$gray-alto: #d5d5d5;
+$gray-dust: #8b8b8b;
+$gray-dove: #6d6d6d;
+$gray-scarpa: #575566;
+$black-mine: #221f1f;
+
+
+$blue-twitter: #55acee;
+$blue-facebook: #3b5998;
+$blue-linkedin: #5291dd;
+$red-firebrick: #b22222;
+
+
+// =======================
+// Colors Constants
+//
+// In this section are defined color constants for various elements of web.
+// **To define color use only variables from above section**
+// =======================
+
+// Base Colors
+$primary-font-color: $black-swamp !default;
+$body-bgc: $white !default;
+$error-color: $red-firebrick !default;
+
+// Headline Colors
+$headline-fc: $black-swamp;
+$headline-fc--secondary: $black-swamp;
+
+// Buttons Colors
+$button-fc: $white !default;
+$button-bc: $blue-curious !default;
+$button-bgc: $blue-curious !default;
+$button-fc--hover: $white !default;
+$button-bgc--hover: $blue-biscay !default;
+$button-bc--hover: $blue-biscay !default;
+$button-bc--active: darken($button-bc--hover, 10%) !default;
+$button-gray-fc: $white !default;
+$button-gray-bgc: $gray-bombay !default;
+$button-gray-bc: $gray-bombay !default;
+$button-gray-fc--hover: $white !default;
+$button-gray-bgc--hover: $gray-abbey !default;
+$button-gray-bc--hover: $gray-abbey !default;
+$button-gray-bc--active: darken($button-gray-bc--hover, 20%) !default;
+$button-dark-blue-fc: $white !default;
+$button-dark-blue-bgc: $blue-burst !default;
+$button-dark-blue-bc: $blue-burst !default;
+$button-dark-blue-fc--hover: $white !default;
+$button-dark-blue-bgc--hover: darken($blue-burst, 20%) !default;
+$button-dark-blue-bc--hover: darken($blue-burst, 20%) !default;
+$button-dark-blue-bc--active: darken($button-gray-bc--hover, 20%) !default;
+
+// Anchor Links Colors
+$link-fc: $primary-font-color !default;
+$link-fc--hover: $blue-turquoise !default;
+$link-fc--active: darken($blue-turquoise, 15%) !default;
+$link-underline: $blue-turquoise !default;
+$link-paragraph-fc: inherit !default;
+$link-paragraph-fc--hover: inherit !default;
+$link-paragraph-fc--active: darken($blue-turquoise, 15%) !default;
+$link-paragraph-underline: $blue-turquoise !default;
+
+// Blockquote Colors
+$blockquote-fc: $blue-biscay !default;
+$blockquote-fc--author: $blue-curious !default;
+
+// // Top Navigation Colors
+// $topbar-bgc: $gray-water !default;
+// $submenu-bgc: $gray-water !default;
+// $submenu-sc: $gray-dust !default;
+// $langswitcher-fs--active: $white !default;
+// $langswitcher-bs--active: $gray-mid !default;
+// $burger-ic: $gray-dove !default;
+// $burger-ic--hover: $black !default;
+
+// Table Colors
+$table-fc: $gray-scarpa !default;
+$table-bgc: $transparent !default;
+$table-bc: rgba($gray-silver, 0.3) !default;
+$table-header-fc: $white !default;
+$table-header-bgc: $blue-twitter !default;
+$table-foot-bgc: $gray-water !default;
+
+//Input Colors
+$input-fc: $primary-font-color !default;
+$input-bc: $gray-silver !default;
+$input-bc--active: $gray-bombay !default;
+$input-bgc: $transparent !default;
+$input-placeholder-fc: rgba($gray-mid, 0.5) !default;
+
+// //Select Boxes Colors
+// $select-boxes-fc: $primary-font-color !default;
+// $select-boxes-bc: $gray-mid !default;
+// $select-boxes-bc--active: $blue-twitter !default;
+// $select-boxes-bgc: $white !default;
+// $select-boxes-option-fc: $primary-font-color !default;
+// $select-boxes-option-bgc: $white !default;
+// $select-boxes-option-fc--hover: $white !default;
+// $select-boxes-option-bgc--hover: $blue-twitter !default;
+
+//Textarea Color
+$textarea-fc: $primary-font-color !default;
+$textarea-bc: $input-bc !default;
+$textarea-bc--active: $input-bc--active !default;
+$textarea-bgc: $transparent !default;
+$textarea-placeholder-fc: $primary-font-color !default;
+
+// //Radio button
+// $radio-bc: $primary-font-color !default;
+// $radio-dot-bgc: $white !default;
+// $radio-bc--checked: $pink-cabaret !default;
+// $radio-bgc--checked: $pink-cabaret !default;
+
+// //Checkbox button
+// $checkbox-bc: $radio-bc !default;
+// $checkbox-dot-bgc: $radio-dot-bgc !default;
+// $checkbox-bc--checked: $radio-bc--checked !default;
+// $checkbox-bgc--checked: $radio-bgc--checked !default;
+// $checkbox-fc--checked: $white !default;
+
+// Pagination
+$pagination-fc: $gray-scarpa;
+$pagination-bc: $gray-scarpa;
+$pagination-bgc--active: $black;
+$pagination-fc--active: $white;

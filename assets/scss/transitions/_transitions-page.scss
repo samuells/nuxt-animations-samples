@@ -1,0 +1,74 @@
+$duration: 300ms;
+
+.page-leave-active,
+.page-enter-active {
+  transition-duration: $duration;
+
+  &.cases {
+    $duration: 500ms;
+
+    transition-duration: $duration;
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(
+        135deg,
+        rgba($blue-turquoise, 1) 25%,
+        rgba($blue-turquoise, 0) 75%);
+      transform-origin: 0% 0%;
+      transition-duration: $duration;
+      transition-timing-function: cubic-bezier(0.93, 0.33, 0.65, 0.66);
+    }
+  }
+}
+
+.page-enter-active {
+  &.cases {
+    &::before {
+      background: linear-gradient(
+        135deg,
+        rgba($blue-turquoise, 0) 25%,
+        rgba($blue-turquoise, 1) 75%);
+      transform-origin: 100% 100%;
+    }
+  }
+}
+
+.page-leave {
+  &.cases {
+    &::before {
+      transform: scale(0);
+    }
+  }
+}
+
+.page-leave-to {
+  &.cases {
+    &::before {
+      transform: scale(3.5);
+    }
+  }
+}
+
+.page-enter {
+  &.cases {
+    &::before {
+      transform: scale(3.5);
+    }
+  }
+}
+
+.page-enter-to {
+  &.cases {
+    &::before {
+      transform: scale(0);
+    }
+  }
+}

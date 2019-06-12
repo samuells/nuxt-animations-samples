@@ -1,0 +1,121 @@
+// =======================
+// Global Headlines Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin headline--lvl1($box-model: true) {
+  display: block;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-family: $font-family--header;
+  font-size: rem(50);
+  font-weight: 700;
+  line-height: (58 / 50);
+  color: $headline-fc;
+
+  @include fluid(
+    (
+      font-size: (
+        50,
+        100
+      ),
+    ),
+    (w1024, w1280)
+  );
+}
+
+@mixin headline--lvl2($box-model: true) {
+  display: block;
+  font-family: $font-family--header;
+  font-weight: 700;
+  line-height: (38 / 30);
+  color: $headline-fc--secondary;
+
+  @include fluid(
+    (
+      font-size: (
+        30,
+        40
+      )
+    ),
+    (w740, w1024)
+  );
+
+  @if $box-model {
+    padding: rh(1) 0 rh(0.25);
+    margin: rh(1) 0 rh(0.5);
+
+    @include breakpoint(w1024) {
+      padding: rh(1.5) 0 rh(0.5);
+      margin: rh(1.5) 0 rh(0.5);
+    }
+  }
+}
+
+@mixin headline--lvl3($box-model: true) {
+  display: block;
+  font-family: $font-family--header-alt;
+  font-weight: 300;
+  line-height: (31 / 26);
+  color: $headline-fc;
+
+  @include fluid(
+    (
+      font-size: (
+        26,
+        32
+      )
+    ),
+    (w740, w1024)
+  );
+
+  @if $box-model {
+    padding: rh(0.75) 0 rh(0.25);
+    margin: rh(0.75) 0 rh(0.25);
+
+    @include breakpoint(w1024) {
+      padding: rh(1) 0 rh(0.5);
+      margin: rh(1.5) 0 rh(0.5);
+    }
+  }
+}
+
+@mixin headline--lvl4($box-model: true) {
+  display: block;
+  font-family: $font-family--header;
+  font-weight: 700;
+  font-size: rem(22);
+  line-height: (28 / 22);
+  color: $headline-fc;
+
+  @if $box-model {
+    padding: rh(0.75) 0 rh(0.25);
+    margin: rh(0.75) 0 rh(0.25);
+
+    @include breakpoint(w1024) {
+      padding: rh(1) 0 rh(0.5);
+      margin: rh(1.5) 0 rh(0.5);
+    }
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .lvl1 {
+    @include headline--lvl1(false);
+  }
+
+  .lvl2 {
+    @include headline--lvl2(false);
+  }
+
+  .lvl3 {
+    @include headline--lvl3(false);
+  }
+
+  .lvl4 {
+    @include headline--lvl4(false);
+  }
+}

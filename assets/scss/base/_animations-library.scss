@@ -1,0 +1,18 @@
+// =======================
+// Global Animations Keyframes
+// =======================
+
+$generate-classes: false !default;
+
+// ---------
+// Implementation
+@if $generate-classes {
+  // @keyframes animation-name {
+  //   50% {
+  //     transform: rotate(1turn) translateX(-10px) translateY(30px);
+  //   }
+  //   to {
+  //     transform: rotate(2turn)  translateX(0px) translateY(0px);
+  //   }
+  // }
+}

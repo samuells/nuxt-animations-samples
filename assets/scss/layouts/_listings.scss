@@ -1,0 +1,75 @@
+// =======================
+// Layouts of lists of components
+// =======================
+
+$generate-classes: false !default;
+
+@mixin listing--1-items {
+  @include reset-ul(false);
+
+  padding: rh(0.25) 0;
+
+  li {
+    padding: rem(15) 0;
+  }
+}
+
+@mixin listing--2-items {
+  @include reset-ul(true);
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: rh(0.25) 0;
+  margin: 0 rem(-15);
+
+  li {
+    flex-basis: rem(350);
+    flex-grow: 1;
+    padding: rem(15);
+  }
+
+  @include breakpoint(large) {
+    li {
+      flex-basis: rem(400);
+      max-width: 50%;
+    }
+  }
+}
+
+@mixin listing--3-items {
+  @include reset-ul(true);
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: rh(0.25) 0;
+  margin: 0 rem(-15);
+
+  li {
+    flex-basis: rem(300);
+    flex-grow: 1;
+    max-width: 50%;
+    padding: rem(15);
+  }
+
+  @include breakpoint(xlarge) {
+    li {
+      flex-basis: rem(400);
+    }
+  }
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  .listing--1-items {
+    @include listing--1-items;
+  }
+
+  .listing--2-items {
+    @include listing--2-items;
+  }
+
+  .listing--3-items {
+    @include listing--3-items;
+  }
+}

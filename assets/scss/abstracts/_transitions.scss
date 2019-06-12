@@ -1,0 +1,15 @@
+// =======================
+// Transitions Mixins
+// =======================
+
+// -------------
+// Basic transition in projects with default properties
+//
+$transition-duration: 250ms !default;
+$transition-timing-function: ease-in-out !default;
+
+@mixin transition($property...) {
+  transition-property: $property;
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+}

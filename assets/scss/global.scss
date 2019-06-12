@@ -1,0 +1,64 @@
+// =======================
+// Main SCSS File
+//
+// !!!! README FIRST !!!!
+// Should content global styles used on all compoents/pages
+//
+// This sass file is used to generate final css output file for web.
+//
+// -- IMPORTANT --
+// ! do not change the order of the import, only on your own danger !
+// =======================
+
+@charset "utf-8";
+
+// Global Variables
+// -------------------------------------
+// - $generate-classes: define if we use the default classes in our custom style mixins or we would like to use special class names
+$generate-classes: true;
+
+// Normalize CSS
+// -------------------------------------
+@import-normalize; // stylelint-disable-line
+// imported normalize css using the postCSS plugin and list of supported browser
+
+// Styles Toolbelt
+// -------------------------------------
+// - import of function, mixins, settings used in project
+@import "toolbelt";
+@import "abstracts/reset";
+
+// Production style files
+// -------------------------------------
+// - custom classes with custom wrapper (depend on used CMS system)
+
+// Helper Classes
+@import "base/helper-classes";
+
+// Global Styles
+// ----------------
+@import "base/animations-library";
+@import "base/paragraphs";
+@import "base/headlines";
+@import "base/links";
+@import "base/buttons";
+@import "base/unordered-list";
+@import "base/ordered-list";
+@import "base/table";
+@import "base/image";
+@import "base/blockquote";
+@import "base/figure";
+// Base Forms
+@import "base/labels";
+@import "base/inputs";
+@import "base/textarea";
+@import "base/radio-buttons";
+// Base Components
+// @import "base/pagination";
+// Layouts
+@import "layouts/rows";
+@import "layouts/listings";
+@import "layouts/default-page";
+
+// transitions
+@import "transitions/transitions-page";

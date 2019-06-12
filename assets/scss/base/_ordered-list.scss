@@ -1,0 +1,56 @@
+// =======================
+// Global Order List Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin list-style--ordered {
+  @include paragraph(false);
+
+  padding-left: rem(30);
+  margin: rh(0.75) 0;
+  font-size: rem(18);
+
+  li {
+    padding-left: calc-rem(8);
+    margin: 0 0 rh(0.25);
+
+    > ol {
+      padding-left: calc-rem(10);
+      padding-bottom: 0;
+      margin: rh(0.25) 0 0;
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    padding-left: calc-rem(50);
+    margin: rh(1) 0;
+
+    li {
+      margin-bottom: rh(0.5);
+
+      > ol {
+        padding-left: calc-rem(10);
+      }
+    }
+  }
+
+  @include breakpoint(w1024) {
+    padding-left: calc-rem(100);
+    margin: rh(1.5) 0;
+    font-size: rem(20);
+  }
+}
+// ---------
+// Implementation
+@if $generate-classes {
+  .rt-content {
+    ol {
+      @include list-style--ordered;
+    }
+  }
+}

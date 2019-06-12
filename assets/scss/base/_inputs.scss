@@ -1,0 +1,71 @@
+// =======================
+// Global Buttons Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin input {
+  @include paragraph(false);
+
+  width: 100%;
+  padding: rh(0.25) 0;
+  border-width: 0;
+  border-radius: 0;
+  border-bottom: 1px solid $input-bc;
+  margin-bottom: rh(1);
+  font-family: $font-family--header;
+  font-weight: 400;
+  color: $input-fc;
+  background-color: $input-bgc;
+  outline: none;
+  box-shadow: none;
+
+  &::placeholder {
+    color: $input-placeholder-fc;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $input-bc--active;
+  }
+
+  @include breakpoint(xlarge) {
+    padding: rh(0.25) 0;
+  }
+}
+
+@mixin input--reset {
+  @include button--base;
+}
+
+@mixin input--submit {
+  @include button--base;
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="datetime"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"] {
+    @include input;
+  }
+
+  input[type="reset"] {
+    @include input--reset;
+  }
+
+  input[type="submit"] {
+    @include input--submit;
+  }
+}

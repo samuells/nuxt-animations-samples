@@ -1,0 +1,14 @@
+// =======================
+// Global Project Variables
+// =======================
+
+//
+// Global variables used in different scss files to achieve dependencies between different files.
+// Please write here the variables, which are used across whole project. As height of the menu, footer, etc.
+//
+
+$topbar-height--default: calc-rem(60);
+$topbar-height--desktop: calc-rem(90);
+// $navigation-breakpoint: 1241px; // Sample value - it's
+
+$padding--side: 20 !default;

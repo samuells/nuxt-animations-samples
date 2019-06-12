@@ -1,0 +1,35 @@
+// =======================
+// Global Labels Styles
+// =======================
+
+$generate-classes: false !default;
+
+@mixin label {
+  display: block;
+  margin-top: rh(0.5);
+
+  span {
+    margin-left: 0;
+    margin-bottom: rh(0.125);
+    font-size: rem(14) !important;
+  }
+}
+
+@mixin label--inline {
+  @include label;
+
+  display: inline;
+}
+
+// ---------
+// Implementation
+@if $generate-classes {
+  label {
+    @include label;
+  }
+
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    @include label--inline;
+  }
+}
