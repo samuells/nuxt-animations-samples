@@ -1,8 +1,8 @@
 $t-duration: 700ms;
 $t-delay: 100ms;
 
-.layout-enter-active,
-.layout-leave-active {
+.lt-enter-active,
+.lt-leave-active {
   transition-duration: $t-duration;
 
   &::before,
@@ -31,14 +31,14 @@ $t-delay: 100ms;
   }
 }
 
-.layout-leave {
+.lt-leave {
   &::before,
   &::after {
     transform: translate3d(-50%, -50%, 0) scale(0);
   }
 }
 
-.layout-leave-active {
+.lt-leave-active {
   &::before {
     transition-duration: $t-duration;
   }
@@ -49,21 +49,21 @@ $t-delay: 100ms;
   }
 }
 
-.layout-leave-to {
+.lt-leave-to {
   &::before,
   &::after {
     transform: translate3d(-50%, -50%, 0) scale(3);
   }
 }
 
-.layout-enter {
+.lt-enter {
   &::before,
   &::after {
     transform: translate3d(-50%, -50%, 0) scale(3);
   }
 }
 
-.layout-enter-active {
+.lt-enter-active {
   &::before {
     left: 75%;
     transition-duration: $t-duration;
@@ -76,7 +76,7 @@ $t-delay: 100ms;
   }
 }
 
-.layout-enter-to {
+.lt-enter-to {
   &::before,
   &::after {
     transform: translate3d(-50%, -50%, 0) scale(0);

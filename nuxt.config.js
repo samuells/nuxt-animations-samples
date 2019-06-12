@@ -46,10 +46,10 @@ export default {
   /*
   ** Layout Transitions
   */
-  layoutTransition: {
-    name: "layout",
-    mode: "out-in"
-  },
+  // layoutTransition: {
+  //   name: "lt",
+  //   mode: "out-in"
+  // },
 
   /*
   ** Page Transitions

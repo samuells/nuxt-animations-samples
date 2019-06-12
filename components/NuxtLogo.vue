@@ -10,11 +10,11 @@
 <style>
 /* stylelint-disable */
 .NuxtLogo {
-  display: inline-block;
   position: relative;
   overflow: hidden;
-  height: 180px;
+  display: inline-block;
   width: 245px;
+  height: 180px;
 }
 
 .Triangle {
@@ -34,10 +34,10 @@
 .Triangle--two {
   top: 30px;
   left: 70px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
   border-right: 87.5px solid transparent;
   border-bottom: 150px solid #3b8070;
+  border-left: 87.5px solid transparent;
+  animation: goright 0.5s linear forwards 3.5s;
 }
 
 .Triangle--three {
@@ -54,6 +54,17 @@
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 60px solid #fff;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .Triangle--two {
+    top: 30px;
+    left: 70px;
+    border-right: 87.5px solid transparent;
+    border-bottom: 150px solid #3b8070;
+    border-left: 87.5px solid transparent;
+    animation: none;
+  }
 }
 /* stylelint-enable */
 </style>

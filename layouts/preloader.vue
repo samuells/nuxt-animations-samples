@@ -13,9 +13,7 @@ export default {
   data() {
     return {
       loadingProgress: 0,
-      loadingInterval: null,
-      isContentShown: false,
-      isContentHidden: false
+      loadingInterval: null
     }
   },
   computed: {
@@ -24,7 +22,6 @@ export default {
     }
   },
   mounted() {
-    this.isContentShown = true
     setTimeout(this.startLoading, 700)
   },
   methods: {
@@ -39,7 +36,6 @@ export default {
 
       if (this.loadingProgress === 110) {
         clearInterval(this.loadingInterval)
-        this.isContentHidden = true
         this.$router.push({ path: "intro" })
       }
     }

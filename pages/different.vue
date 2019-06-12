@@ -1,9 +1,9 @@
 <template>
   <main
-    :key="1"
+    :key="99"
     class="row--outer">
     <NuxtLogo class="logo"/>
-    <h2 class="lvl2 title">Experiments with Transitions </h2>
+    <h2 class="lvl2 title">This page used different layout.</h2>
     <div class="links">
       <nuxt-link
         to="/first"
@@ -14,9 +14,6 @@
       <nuxt-link
         to="/third"
         class="button">Third</nuxt-link>
-      <nuxt-link
-        to="/different"
-        class="button">Different Layout</nuxt-link>
     </div>
   </main>
 </template>
@@ -25,10 +22,7 @@
 import NuxtLogo from "~/components/NuxtLogo"
 
 export default {
-  transition: {
-    name: "intro",
-    mode: "out-in"
-  },
+  layout: "different",
   components: {
     NuxtLogo
   }
