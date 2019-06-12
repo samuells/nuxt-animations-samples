@@ -1,0 +1,6 @@
+node_modules/**/*
+static/**/*
+build/**/*
+assets/scss/vendors/**/*
+assets/scss/templates/**/*
+**/*.css

@@ -2,10 +2,6 @@
   "name": "nuxt-animations-samples",
   "version": "1.0.0",
   "description": "Used for talks and experiments with animations inside VueJS and NuxtJS.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samuells/nuxt-animations-samples.git"
@@ -19,14 +15,67 @@
   ],
   "author": "samuel@snopko.com",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/samuells/nuxt-animations-samples/issues"
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint:vue": "eslint **/*.vue",
+    "lint:scss": "stylelint **/**/*.vue **/**/*.scss",
+    "lint": "yarn lint:scss & yarn lint:vue",
+    "precommit": "yarn lint"
   },
-  "homepage": "https://github.com/samuells/nuxt-animations-samples#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "stylelint --fix"
+    ]
+  },
   "dependencies": {
     "node-sass": "^4.12.0",
     "nuxt": "^2.8.1",
     "postcss-normalize": "^8.0.1",
     "sass-loader": "^7.1.0"
-  }
+  },
+  "devDependencies": {
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-loader": "2.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-vue": "4.7.1",
+    "husky": "2.3.0",
+    "lint-staged": "8.1.7",
+    "prettier": "1.14.3",
+    "prettier-eslint": "8.8.2",
+    "prettier-stylelint": "0.4.2",
+    "stylelint": "10.0.1",
+    "stylelint-a11y": "1.2.0",
+    "stylelint-config-sass-guidelines": "6.0.0",
+    "stylelint-config-standard": "18.3.0",
+    "stylelint-declaration-block-no-ignored-properties": "2.1.0",
+    "stylelint-order": "3.0.0",
+    "stylelint-scss": "3.6.1"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "Safari >= 11",
+    "Edge >= 15",
+    "iOS >= 11",
+    "Android >= 8",
+    "last 2 Samsung versions",
+    "IE 11"
+  ]
 }
