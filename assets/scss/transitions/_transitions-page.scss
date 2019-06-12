@@ -1,5 +1,4 @@
 $t-duration: 800ms;
-$t-delay: 150ms;
 
 .default-enter-active,
 .default-leave-active {
@@ -15,11 +14,6 @@ $t-delay: 150ms;
   width: 100vw;
   background-color: $white;
   transform: translate3d(0, 100vh, 0);
-}
-
-.default-leave-active {
-  // transition-duration: $t-duration - $t-delay;
-  // transition-delay: $t-delay;
 }
 
 .default-leave-to {
