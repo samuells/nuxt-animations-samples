@@ -54,7 +54,7 @@ export default {
   /*
   ** Page Transitions
   */
-  transition: {
+  pageTransition: {
     name: "default",
     mode: ""
   },
