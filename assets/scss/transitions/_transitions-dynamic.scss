@@ -1,0 +1,29 @@
+$t-duration: 1000ms;
+
+.dynamic-enter-active,
+.dynamic-leave-active {
+  transition-property: opacity;
+  transition-duration: $t-duration;
+  transition-timing-function: ease-in-out;
+
+  .page-transition--default {
+    opacity: 1;
+    transition-duration: 0;
+  }
+}
+
+.dynamic-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: $white;
+}
+
+.dynamic-enter {
+  opacity: 0;
+}
+
+.dynamic-leave-to {
+  opacity: 0;
+}

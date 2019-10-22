@@ -10,7 +10,7 @@
         class="button">First</nuxt-link>
       <nuxt-link
         to="/second"
-        class="button">Second (with popup)</nuxt-link>
+        class="button">Second</nuxt-link>
       <nuxt-link
         to="/third"
         class="button">Third</nuxt-link>
@@ -20,6 +20,9 @@
       <nuxt-link
         to="/biker"
         class="button">Bikers</nuxt-link>
+      <nuxt-link
+        to="/dynamic"
+        class="button">Dynamic</nuxt-link>
       <nuxt-link
         to="/different"
         class="button">Different Layout</nuxt-link>

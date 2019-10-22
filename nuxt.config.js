@@ -1,3 +1,7 @@
+require("dotenv").config()
+
+const StoryBlokToken = process.env.STORYBLOK_TOKEN
+
 export default {
   dev: process.env.NODE_ENV !== "production",
   debug: process.env.NODE_ENV !== "production",
@@ -67,16 +71,28 @@ export default {
   /*
     ** Plugins to load before mounting the App
     */
-  plugins: [],
+  plugins: ["~/plugins/helpers"],
   /*
     ** Nuxt.js modules
     */
-  modules: ["@nuxtjs/style-resources"],
+  modules: [
+    [
+      "storyblok-nuxt",
+      {
+        accessToken: StoryBlokToken,
+        cacheProvider: "memory"
+      }
+    ],
+    "@nuxtjs/style-resources"
+  ],
   /*
     ** Default SCSS Files import - requirments for all components
     */
   styleResources: {
     scss: ["~assets/scss/_toolbelt.scss"]
+  },
+  router: {
+    middleware: ["cache-version-loader", "settings-loader"]
   },
   /*
     ** Build configuration
