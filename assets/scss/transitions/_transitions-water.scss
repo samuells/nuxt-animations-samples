@@ -1,0 +1,29 @@
+$t-duration: 3000ms;
+$t-duration--leave: 0ms;
+
+.water-leave-active {
+  transition-duration: $t-duration--leave;
+}
+
+.water-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translate3d(0, 100vh, 0);
+  transition-duration: $t-duration;
+
+  .page-transition--lottie {
+    transform: translate3d(0, 0, 0);
+    transition-property: transform;
+    transition-duration: $t-duration;
+    transition-timing-function: cubic-bezier(0.04, 0.59, 0.9, 0.5);
+  }
+}
+
+.water-enter-to {
+  .page-transition--lottie {
+    transform: translate3d(0, -120vh, 0);
+  }
+}

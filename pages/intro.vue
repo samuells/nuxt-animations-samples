@@ -15,6 +15,9 @@
         to="/third"
         class="button">Third</nuxt-link>
       <nuxt-link
+        to="/liquid-success"
+        class="button">Water</nuxt-link>
+      <nuxt-link
         to="/different"
         class="button">Different Layout</nuxt-link>
     </div>

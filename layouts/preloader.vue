@@ -1,7 +1,7 @@
 <template>
   <main
     :key="0"
-    class="layout--default">
+    class="layout--default preloader">
     <div class="row--outer">
       <h1 class="lvl1 progress">{{ formattedProgress }}</h1>
     </div>
@@ -52,7 +52,7 @@ export default {
   text-align: center;
 }
 
-main {
+.preloader {
   overflow: hidden;
 }
 
