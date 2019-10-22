@@ -8,7 +8,6 @@
 
 <script>
 import Lottie from "./Lottie"
-import animationLiquidCheckmark from "@/assets/animations/liquid-checkmark-loading.json"
 import animationWater from "@/assets/animations/water.json"
 
 export default {
