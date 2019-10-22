@@ -1,7 +1,7 @@
 <template>
   <div class="page-transition--lottie">
     <Lottie
-      :options="liquidCheckAnimation"
+      :options="waterAnimation"
       class="_animation" />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      liquidCheckAnimation: {
+      waterAnimation: {
         animationData: animationWater
       }
     }

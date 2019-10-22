@@ -1,0 +1,57 @@
+$t-duration: 2000ms;
+$t-duration--leave: 0ms;
+
+.biker-leave-active {
+  transition-duration: $t-duration--leave;
+}
+
+.biker-enter-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition-duration: $t-duration;
+
+  .content {
+    opacity: 0;
+  }
+
+  .page-transition--biker {
+    .biker {
+      transform: translate3d(-100%, 0, 0);
+      transition-property: transform;
+      transition-duration: $t-duration;
+      transition-timing-function: ease-in-out;
+    }
+
+    .biker-1 {
+      transition-delay: 150ms;
+      transition-duration: $t-duration - 150ms;
+    }
+
+    .biker-2 {
+      transition-delay: 300ms;
+      transition-duration: $t-duration - 300ms;
+    }
+
+    .biker-3 {
+      transition-delay: 0ms;
+      transition-timing-function: ease-out;
+    }
+
+    .biker-4 {
+      transition-delay: 400ms;
+      transition-duration: $t-duration - 400ms;
+    }
+
+    .biker-5 {
+      transition-delay: 50ms;
+      transition-duration: $t-duration - 50ms;
+    }
+  }
+}
+
+.biker-enter-to {
+  .page-transition--biker .biker {
+    transform: translate3d(110vw, 0, 0);
+  }
+}

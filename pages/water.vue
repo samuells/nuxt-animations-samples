@@ -1,5 +1,5 @@
 <template>
-  <main class="page--default liquid-success">
+  <main class="page--default water">
     <article class="row--outer rt-content">
       <h1 class="lvl1">Successfully Animated!</h1>
       <p>Est qui reprehenderit inventore et. Reprehenderit eligendi voluptatibus nam aut. Ducimus eveniet necessitatibus quidem rem.Est qui reprehenderit inventore et. Reprehenderit eligendi voluptatibus nam aut. Ducimus eveniet necessitatibus quidem rem.Est qui reprehenderit inventore et. Reprehenderit eligendi voluptatibus nam aut. Ducimus eveniet necessitatibus quidem rem.Est qui reprehenderit inventore et. Reprehenderit eligendi voluptatibus nam aut. Ducimus eveniet necessitatibus quidem rem.</p>
@@ -15,12 +15,12 @@
       class="button">
       Back to Home
     </nuxt-link>
-    <PageTransition/>
+    <PageWaterTransition/>
   </main>
 </template>
 
 <script>
-import PageTransition from "~/components/PageTransition"
+import PageWaterTransition from "~/components/PageWaterTransition"
 
 export default {
   transition: {
@@ -28,13 +28,13 @@ export default {
     mode: "in-out"
   },
   components: {
-    PageTransition
+    PageWaterTransition
   }
 }
 </script>
 
 <style lang="scss">
-.liquid-success {
+.water {
   padding-top: rh(5);
 }
 </style>

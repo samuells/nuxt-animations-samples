@@ -26,7 +26,6 @@ export default {
   data() {
     return {
       style: {
-        height: this.height,
         overflow: "hidden",
         margin: "0 auto"
       }
