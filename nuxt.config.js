@@ -12,7 +12,7 @@ export default {
   head: {
     title: "Animation's Experiments",
     htmlAttrs: {
-      amp: undefined
+      amp: false
     },
     meta: [
       { charset: "utf-8" },
