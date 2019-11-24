@@ -14,8 +14,8 @@
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "prettier.stylelintIntegration": true,
-  "prettier.eslintIntegration": true,
+  "prettier-stylelint.stylelintIntegration": true,
+  "prettier-stylelint.eslintIntegration": true,
   "prettier.disableLanguages": [],
   "files.associations": {
     ".stylelintrc": "json"
@@ -26,5 +26,5 @@
   "vetur.format.defaultFormatter.js": "prettier",
   "vetur.format.defaultFormatter.less": "prettier",
   "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier"
 }
