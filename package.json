@@ -46,7 +46,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "dotenv": "^8.2.0",
     "lottie-web": "^5.5.9",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "nuxt": "^2.10.2",
     "postcss-normalize": "^8.0.1",
     "sass-loader": "^8.0.0",
